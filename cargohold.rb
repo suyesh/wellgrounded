@@ -1,20 +1,20 @@
-require_relative "stacklike"
+require_relative 'stacklike'
 
 class Suitcase
 end
 
 class CargoHold
-  include Stacklike
-  def load_and_report(obj)
-    print "Loading Object "
-    puts obj.object_id
+    include Stacklike
+    def load_and_report(obj)
+        print 'Loading Object '
+        puts obj.object_id
 
-    add_to_stack(obj)
-  end
+        add_to_stack(obj)
+    end
 
-  def unload
-    take_from_stack
-  end
+    def unload
+        take_from_stack
+    end
 end
 
 ch = CargoHold.new
@@ -25,5 +25,5 @@ ch.load_and_report(sc1)
 ch.load_and_report(sc2)
 ch.load_and_report(sc3)
 first_unloaded = ch.unload
-print "The first suitcase off the plane is .... "
+print 'The first suitcase off the plane is .... '
 puts first_unloaded.object_id

@@ -1,7 +1,7 @@
 class Ticket
-  def event
-    "Can't really be specified yet...."
-  end
+    def event
+        "Can't really be specified yet...."
+    end
 end
 
 ticket = Ticket.new
