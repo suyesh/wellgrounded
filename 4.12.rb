@@ -20,7 +20,7 @@ class Person
       attr = method[9..-1]
       if self.public_method_defined?(attr)
         PEOPLE.fine_all do |person|
-          person.send(attr).include?(args[0])
+          personsend(attr).include?(args[0])
         end
       else
         raise ArgumentError, "Can't find #{attr}"
@@ -30,3 +30,9 @@ class Person
     end
   end
 end
+
+a = Person.new("suyesh")
+b = Person.new("Felicia")
+
+a.has_hobby("music")
+b.has_hobby("makeup")
