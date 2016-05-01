@@ -19,8 +19,8 @@ class Person
     if method.start_with?("all_with_")
       attr = method[9..-1]
       if self.public_method_defined?(attr)
-        PEOPLE.fine_all do |person|
-          personsend(attr).include?(args[0])
+        PEOPLE.find_all do |person|
+          person.send(attr).include?(args[0])
         end
       else
         raise ArgumentError, "Can't find #{attr}"
@@ -35,4 +35,9 @@ a = Person.new("suyesh")
 b = Person.new("Felicia")
 
 a.has_hobby("music")
+a.has_hobby("football")
 b.has_hobby("makeup")
+
+(Person.all_with_hobbies "football").each do |x|
+  puts x.name
+end
