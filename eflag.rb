@@ -1,1 +1,0 @@
-"puts 'Suyesh Bhandari'.reverse"
